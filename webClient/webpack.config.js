@@ -15,9 +15,10 @@ const VENDOR_LIBS = [
 
 module.exports = {
   entry: {
-    bundle: './src/index.js',
+    bundle: ['babel-polyfill', './src/index.js'],
     vendor: VENDOR_LIBS
   },
+  devtool: 'eval-source-map',
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].[hash].js'
